@@ -1,0 +1,75 @@
+# 持仓清单 —— 手动维护
+# 股数与成本价为 2026-10-13 两券商账户截图合并值，市值由程序按最新价计算
+#
+# type: stock / fund_lof（场内基金）
+
+holdings:
+  - code: "601318"
+    name: 中国平安
+    type: stock
+    shares: 3500        # 1500(东财) + 2000(江海)
+    cost: 51.70         # 加权成本约值，可在券商App核对后修改
+    industry: 保险
+
+  - code: "002415"
+    name: 海康威视
+    type: stock
+    shares: 2900        # 1500 + 1400
+    cost: 33.30
+    industry: 安防科技
+
+  - code: "300760"
+    name: 迈瑞医疗
+    type: stock
+    shares: 400
+    cost: 181.90
+    industry: 医疗器械
+
+  - code: "002027"
+    name: 分众传媒
+    type: stock
+    shares: 5200
+    cost: 5.43
+    industry: 广告传媒
+
+  - code: "600660"
+    name: 福耀玻璃
+    type: stock
+    shares: 400
+    cost: 57.64
+    industry: 汽车零部件
+
+  - code: "600036"
+    name: 招商银行
+    type: stock
+    shares: 200
+    cost: 21.18
+    industry: 银行
+
+  - code: "601058"
+    name: 赛轮轮胎
+    type: stock
+    shares: 1100
+    cost: 12.96
+    industry: 轮胎
+
+  - code: "601012"
+    name: 隆基绿能
+    type: stock
+    shares: 700
+    cost: 19.61
+    industry: 光伏
+
+  - code: "300274"
+    name: 阳光电源
+    type: stock
+    shares: 100
+    cost: 118.40
+    industry: 光伏逆变器
+
+  - code: "160632"
+    name: 白酒基金LOF
+    type: fund_lof
+    shares: 18300
+    cost: 0.672
+    industry: 消费
