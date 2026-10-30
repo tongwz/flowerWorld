@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阳光电源（300274）2026年三季报分析</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f6f8; color: #1a2332; line-height: 1.65; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 24px 20px 60px; }
+  .header { background: linear-gradient(135deg, #8a5a00 0%, #c07f00 100%); color: #fff; border-radius: 12px; padding: 32px 36px; margin-bottom: 20px; }
+  .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+  .header .sub { font-size: 13px; opacity: .85; }
+  .header .tag { display: inline-block; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: 2px 12px; font-size: 12px; margin-right: 8px; margin-top: 10px; }
+  .card { background: #fff; border-radius: 12px; padding: 26px 30px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(15,35,70,.06); }
+  .card h2 { font-size: 18px; color: #8a5a00; margin-bottom: 14px; padding-left: 10px; border-left: 4px solid #c07f00; }
+  .card h3 { font-size: 15px; color: #333; margin: 18px 0 10px; }
+  .tldr { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+  .tldr .kpi { background: #faf9f6; border: 1px solid #eee5d5; border-radius: 10px; padding: 14px 14px 10px; text-align: center; }
+  .tldr .kpi .label { font-size: 12px; color: #6b7a90; margin-bottom: 4px; }
+  .tldr .kpi .value { font-size: 22px; font-weight: 700; }
+  .tldr .kpi .delta { font-size: 12px; margin-top: 3px; }
+  .up { color: #d64040; }
+  .down { color: #1e9e5a; }
+  .conclusion { background: #faf9f6; border-left: 4px solid #c07f00; border-radius: 8px; padding: 16px 20px; font-size: 14px; }
+  .conclusion p { margin-bottom: 8px; }
+  .conclusion p:last-child { margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0; }
+  th { background: #f6f1e7; color: #8a5a00; font-weight: 600; padding: 9px 10px; text-align: right; white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  td { padding: 8px 10px; border-bottom: 1px solid #f0ece3; text-align: right; white-space: nowrap; }
+  tr:hover td { background: #faf9f6; }
+  .note { font-size: 12px; color: #8896a8; margin-top: 6px; }
+  .chart-box { width: 100%; height: 380px; margin: 12px 0 4px; }
+  .toggle-wrap { text-align: right; margin-bottom: 2px; }
+  .toggle-btn { display: inline-block; font-size: 12px; color: #c07f00; border: 1px solid #e5d5b0; background: #faf9f6; border-radius: 6px; padding: 3px 12px; cursor: pointer; user-select: none; }
+  .toggle-btn:hover { background: #f4eddc; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .disclaimer { font-size: 12px; color: #98a4b3; border-top: 1px dashed #d5dce5; padding-top: 14px; margin-top: 8px; line-height: 1.7; }
+  .src { font-size: 11px; color: #9aa7b5; margin-top: 4px; }
+  @media (max-width: 760px) { .tldr { grid-template-columns: repeat(2, 1fr); } .grid2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>阳光电源（300274.SZ）2026年三季报分析</h1>
+    <div class="sub">报告期：2026年第三季度（Q3 单季 + 前三季度累计）｜数据来源：公司三季报公告（2026-10-30 披露，未经审计）</div>
+    <span class="tag">同比 / 环比拆解</span><span class="tag">利润 · 现金流 · 扣非 · 存货</span><span class="tag">财报点评</span>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="card">
+    <h2>30 秒结论</h2>
+    <div class="tldr">
+      <div class="kpi">
+        <div class="label">Q3 归母净利润</div>
+        <div class="value">13.41<span style="font-size:13px;font-weight:400;"> 亿元</span></div>
+        <div class="delta down">同比 -67.7% ｜ 环比 -54.8%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Q3 营业收入</div>
+        <div class="value">179.50<span style="font-size:13px;font-weight:400;"> 亿元</span></div>
+        <div class="delta down">同比 -21.5% ｜ 环比 +16.9%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Q3 扣非净利润</div>
+        <div class="value">16.93<span style="font-size:13px;font-weight:400;"> 亿元</span></div>
+        <div class="delta down">同比 -57.6% ｜ 环比 -24.5%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">前三季经营现金流</div>
+        <div class="value">36.48<span style="font-size:13px;font-weight:400;"> 亿元</span></div>
+        <div class="delta down">同比 -63.2%（Q3 单季 -0.88 亿，环比转负）</div>
+      </div>
+    </div>
+    <div class="conclusion">
+      <p><b>收入环比回升、利润环比腰斩，现金流单季转负——Q3 是全年最弱的一个季度。</b>收入端 Q3 环比 +16.9%（179.5 亿 vs Q2 的 153.5 亿）确认上半年收入低点已过，但归母净利润从 Q2 的 29.67 亿骤降至 13.41 亿（环比 -54.8%），单季归母净利率 7.47%（Q2 为 19.33%），是本报告的核心矛盾。</p>
+      <p><b>利润下滑三重压力：</b>① 毛利率环比大幅回落——Q3 毛利率 29.45%，环比 Q2（38.62%）下降 9.17 个百分点，反映行业价格竞争延续；② 汇兑损失——前三季财务费用 5.01 亿（去年同期 -1.22 亿），公司明确说明欧元、美元贬值导致汇兑损失增加；③ 减值计提——前三季信用减值损失 4.51 亿（同比多损 1.27 亿，坏账计提增加）。值得注意的是 Q3 扣非净利 16.93 亿<b>高于</b>归母净利 13.41 亿——单季非经常性损益为 -3.52 亿（金融资产公允价值变动 -4.89 亿是主因），进一步拖累了表观利润。</p>
+      <p><b>存货是最大的资产端信号：</b>存货 409.72 亿，较年初 +50.3%、同比 +36.9%、环比 +27.4%——增速远超收入，公司说明"销售库存及项目投入增加"。收入下滑 26% 的背景下存货逆势大增 137 亿，需要区分是储能/逆变器出海订单的主动备货（配合合同负债 146.66 亿、较年初 +37.6% 的正向信号），还是需求走弱下的被动累库——前者是好存货，后者是减值风险。结合前三季资产减值损失 5.64 亿（同比收窄 41%）判断，公司当前计提口径下存货尚属健康，但 Q4 是关键验证窗口。</p>
+    </div>
+  </div>
+
+  <!-- 利润表现 -->
+  <div class="card">
+    <h2>一、利润：Q3 环比 -55%，单季净利率降至 7.5%</h2>
+    <div class="toggle-wrap"><span class="toggle-btn" onclick="toggleChart('chart1','table1')">切换为表格</span></div>
+    <div id="chart1" class="chart-box"></div>
+    <div id="table1" style="display:none;">
+      <table>
+        <thead><tr><th>项目（单季，亿元）</th><th>2026Q3</th><th>2026Q2</th><th>环比</th><th>2025Q3</th><th>同比</th></tr></thead>
+        <tbody>
+          <tr><td>营业收入</td><td>179.50</td><td>153.52</td><td class="up">+16.9%</td><td>228.69</td><td class="down">-21.5%</td></tr>
+          <tr><td>归母净利润</td><td>13.41</td><td>29.67</td><td class="down">-54.8%</td><td>41.47</td><td class="down">-67.7%</td></tr>
+          <tr><td>扣非归母净利润</td><td>16.93</td><td>22.43</td><td class="down">-24.5%</td><td>39.91</td><td class="down">-57.6%</td></tr>
+          <tr><td>归母净利率</td><td>7.47%</td><td>19.33%</td><td>-11.86 pct</td><td>18.13%</td><td>-10.66 pct</td></tr>
+          <tr><td>毛利率</td><td>29.45%</td><td>38.62%</td><td>-9.17 pct</td><td>35.87%</td><td>-6.42 pct</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>前三季度累计口径</h3>
+    <table>
+      <thead><tr><th>项目（亿元）</th><th>2026 前三季</th><th>2025 前三季</th><th>同比</th></tr></thead>
+      <tbody>
+        <tr><td>营业收入</td><td>488.63</td><td>664.02</td><td class="down">-26.41%</td></tr>
+        <tr><td>利润总额</td><td>78.46</td><td>145.80</td><td class="down">-46.19%</td></tr>
+        <tr><td>归母净利润</td><td>65.99</td><td>118.81</td><td class="down">-44.46%</td></tr>
+        <tr><td>扣非归母净利润</td><td>59.68</td><td>114.86</td><td class="down">-48.04%</td></tr>
+        <tr><td>基本每股收益（元）</td><td>3.21</td><td>5.73</td><td class="down">-43.98%</td></tr>
+        <tr><td>加权平均 ROE</td><td>13.50%</td><td>28.31%</td><td>-14.81 pct</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-top:10px;"><b>季度轨迹：</b>2026 年三个季度单季归母净利润依次为 22.91 亿 → 29.67 亿 → 13.41 亿。Q2 曾靠毛利率修复（38.62%，环比 +5.36 pct）实现盈利环比改善，但 Q3 毛利率掉到 29.45%、单季利润直接腰斩——<b>盈利的季度波动极大，且 Q3 的下滑是量价双杀（收入同比 -21.5% + 毛利率同比 -6.4 pct）叠加油汇扰动</b>。</p>
+    <p style="font-size:13px;"><b>扣非与归母的剪刀差值得注意：</b>Q3 扣非 16.93 亿 &gt; 归母 13.41 亿，单季非经常性损益 -3.52 亿（前三季合计 +6.31 亿），主因是 Q3 单季金融资产公允价值变动损益 -4.89 亿（前三季 +2.87 亿，倒推 Q3 为负）。剔除这块非现金的市场波动后，主业利润的环比降幅（扣非口径 -24.5%）明显小于表观（-54.8%）。</p>
+    <p class="src">来源：公司 2026 年三季报公告（2026-10-30）；Q2/半年报数据（2026-08-29 披露）；一季报（2026-04-28 披露）；2025Q3 数据来自 2025 年三季报（2025-10-29 披露）。Q3 单季 = 前三季累计 − 半年报累计。</p>
+  </div>
+
+  <!-- 经营现金流 -->
+  <div class="card">
+    <h2>二、经营现金流：单季转负，回款压力在 Q3 集中显现</h2>
+    <div class="toggle-wrap"><span class="toggle-btn" onclick="toggleChart('chart2','table2')">切换为表格</span></div>
+    <div id="chart2" class="chart-box"></div>
+    <div id="table2" style="display:none;">
+      <table>
+        <thead><tr><th>项目（亿元）</th><th>2026 前三季累计</th><th>2025 前三季累计</th><th>同比</th></tr></thead>
+        <tbody>
+          <tr><td>经营活动现金流净额</td><td>36.48</td><td>99.14</td><td class="down">-63.21%</td></tr>
+          <tr><td>销售商品收到现金 / 营业收入</td><td>112.7%</td><td>90.5%</td><td>+22.2 pct</td></tr>
+          <tr><td>净现比（经营现金流 / 归母净利）</td><td>0.55</td><td>0.83</td><td>-0.28</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>分季拆解（Q3 单季 = 累计 − 中报）</h3>
+    <table>
+      <thead><tr><th>单季（亿元）</th><th>2026Q3</th><th>2026Q2</th><th>2026Q1</th><th>环比</th></tr></thead>
+      <tbody>
+        <tr><td>经营活动现金流净额</td><td>-0.88</td><td>25.27</td><td>12.08</td><td class="down">转负</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-top:10px;"><b>解读：</b>Q3 单季经营现金流 -0.88 亿，是全年首个转负的季度（Q1 +12.08 亿、Q2 +25.27 亿）。结构上看：前三季销售收现 550.84 亿，收现比 112.7% 表面很高，但购买商品支付现金 403.89 亿（同比 +5.9%，<b>收入降 26% 而采购付款在涨</b>）——这与存货大增 137 亿相互印证：Q3 利润下滑的同时公司在主动加大采购备货，现金都变成了库存。另外支付职工现金 74.22 亿（同比 +41.3%，含上年计提的业绩激励基金兑现）也侵蚀了单季现金流。</p>
+    <p style="font-size:13px;"><b>与利润对照：</b>净现比 0.55（赛轮 0.77），且 Q3 单季"利润 13.4 亿 + 现金流 -0.9 亿"的组合明显弱于赛轮的"利润 5.5 亿 + 现金流 10.6 亿"。阳光的现金流压力点在<b>应收与存货两座大山</b>（应收账款 218.38 亿 + 存货 409.72 亿 = 占总资产 46%），赛轮的压力点在单一存货。</p>
+    <p class="src">来源：公司 2026 年三季报合并现金流量表；分季数据由三季报累计 − 半年报累计倒算；2025 年基数来自 2025 年三季报。</p>
+  </div>
+
+  <!-- 存货 -->
+  <div class="card">
+    <h2>三、存货：409.7 亿，较年初 +50%，全报表最大的边际变化</h2>
+    <div class="toggle-wrap"><span class="toggle-btn" onclick="toggleChart('chart3','table3')">切换为表格</span></div>
+    <div id="chart3" class="chart-box" style="height:360px;"></div>
+    <div id="table3" style="display:none;">
+      <table>
+        <thead><tr><th>时点</th><th>存货（亿元）</th><th>环比变动</th><th>同比变动</th></tr></thead>
+        <tbody>
+          <tr><td>2025-12-31</td><td>272.55</td><td>—</td><td>—</td></tr>
+          <tr><td>2026-03-31</td><td>277.58</td><td>较年初 +1.8%</td><td>—</td></tr>
+          <tr><td>2026-06-30</td><td>321.53</td><td>较 Q1 +15.8%</td><td>—</td></tr>
+          <tr><td>2026-09-30</td><td>409.72</td><td>较 H1 +27.4%</td><td class="up">+36.9%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;margin-top:10px;"><b>解读：</b>存货从年初 272.55 亿增至 409.72 亿，三个季度累计增加 137 亿（+50.3%），且每个季度都在加速（Q1 +5 亿 → Q2 +44 亿 → Q3 +88 亿）。公司口径"销售库存及项目投入增加"。<b>判断性质的关键交叉验证：</b></p>
+    <p style="font-size:13px;">
+    ① <b>正面证据——订单背书的主动备货</b>：合同负债（预收货款）146.66 亿，较年初 +37.6%，Q3 单季仍在增长；预付款项 54.30 亿（较年初 +305%，预付材料款），说明公司在为后续交付锁定上游供应。若四季度海外储能/逆变器订单集中交付，这批存货会快速转化为收入。<br>
+    ② <b>负面风险——跌价准备</b>：前三季资产减值损失 5.64 亿（同比收窄 41.1%，公司说明"存货跌价损失减少"），当前计提口径偏乐观；若行业价格竞争延续（Q3 毛利率已环比 -9.2 pct）、或海外订单不及预期，Q4 存货跌价计提可能显著放大。应收账款 218.38 亿仍处高位，坏账计提（信用减值 4.51 亿）同比还在增加。<br>
+    ③ <b>体量对比</b>：存货/前三季营业成本 = 126.2%，而 2025 年三季度末为 112.6%——存货可支撑约 15 个月销售，占压资金规模为赛轮（37%）的三倍以上。<b>存货的去化速度是判断阳光四季度报表质量的第一变量。</b></p>
+    <p class="src">来源：公司 2026 年三季报合并资产负债表；2026 年一季报、半年报；2025 年三季报（存货 299.26 亿）。</p>
+  </div>
+
+  <!-- 与赛轮对比 -->
+  <div class="card">
+    <h2>四、阳光电源 vs 赛轮轮胎：Q3 单季正面对比</h2>
+    <p style="font-size:13px;">两家同日披露三季报（2026-10-30），都遭遇了"利润大幅下滑"，但下滑的结构完全不同。赛轮是<b>收入创新高 + 利润被成本/汇兑挤压</b>（需求没问题，毛利率被原材料和汇率打掉），阳光是<b>收入下滑 + 毛利率竞争性恶化 + 汇兑/公允价值多重扰动</b>（需求和价格双弱）。</p>
+    <table style="margin-top:12px;">
+      <thead><tr><th>2026Q3 单季</th><th>阳光电源</th><th>赛轮轮胎</th><th>谁更好</th></tr></thead>
+      <tbody>
+        <tr><td>营业收入（亿元）</td><td>179.50</td><td>108.58</td><td>—</td></tr>
+        <tr><td>营收同比</td><td class="down">-21.5%</td><td class="up">+8.6%</td><td>赛轮（正增长）</td></tr>
+        <tr><td>营收环比</td><td class="up">+16.9%</td><td class="up">+2.8%</td><td>阳光（回升幅度大）</td></tr>
+        <tr><td>归母净利润（亿元）</td><td>13.41</td><td>5.52</td><td>—</td></tr>
+        <tr><td>归母同比</td><td class="down">-67.7%</td><td class="down">-46.9%</td><td>赛轮（降幅小）</td></tr>
+        <tr><td>归母环比</td><td class="down">-54.8%</td><td class="down">-49.9%</td><td>接近（都腰斩）</td></tr>
+        <tr><td>扣非环比</td><td class="down">-24.5%</td><td class="down">-47.7%</td><td>阳光（主业降幅小）</td></tr>
+        <tr><td>Q3 毛利率</td><td>29.45%（环比 -9.2 pct）</td><td>20.98%（环比 -6.1 pct）</td><td>阳光（绝对水平高）</td></tr>
+        <tr><td>Q3 归母净利率</td><td>7.47%</td><td>5.09%</td><td>阳光</td></tr>
+        <tr><td>Q3 经营现金流（亿元）</td><td class="down">-0.88（转负）</td><td class="up">+10.61（环比 +24%）</td><td>赛轮（显著更好）</td></tr>
+        <tr><td>存货较年初</td><td class="down">+50.3%（409.7 亿）</td><td class="up">+20.1%（85.7 亿）</td><td>赛轮（压力小得多）</td></tr>
+        <tr><td>存货/前三季营业成本</td><td>126.2%</td><td>37.0%</td><td>赛轮</td></tr>
+        <tr><td>净现比（前三季）</td><td>0.55</td><td>0.77</td><td>赛轮</td></tr>
+        <tr><td>利润下滑主因</td><td>毛利率竞争性下滑 + 汇兑 + 公允价值</td><td>原材料成本 + 汇兑</td><td>性质不同（见下）</td></tr>
+      </tbody>
+    </table>
+    <div class="toggle-wrap" style="margin-top:14px;"><span class="toggle-btn" onclick="toggleChart('chart4','table4')">切换为表格</span></div>
+    <div id="chart4" class="chart-box"></div>
+    <div id="table4" style="display:none;">
+      <table>
+        <thead><tr><th>2026Q3 单季</th><th>营收环比</th><th>归母环比</th><th>扣非环比</th></tr></thead>
+        <tbody>
+          <tr><td>阳光电源</td><td>+16.9%</td><td>-54.8%</td><td>-24.5%</td></tr>
+          <tr><td>赛轮轮胎</td><td>+2.8%</td><td>-49.9%</td><td>-47.7%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>关键判断：谁在改善，谁在恶化？</h3>
+    <p style="font-size:13px;"><b>收入端：阳光改善、赛轮平稳。</b>阳光 Q3 营收环比 +16.9%（153.5 → 179.5 亿），确认 Q2 是年内收入低点，Q3 起交付节奏回升（合同负债 146.66 亿、较年初 +37.6% 提供订单支撑）；赛轮收入一直稳（Q1 94.6 → Q2 105.7 → Q3 108.6 亿），逐季爬升但增速放缓。<b>边际改善信号：阳光更明确。</b></p>
+    <p style="font-size:13px;"><b>利润端：半斤八两，但结构不同。</b>表观归母环比双双腰斩（阳光 -54.8% vs 赛轮 -49.9%）。但拆开看：阳光的扣非环比 -24.5% 明显好于表观（-4.89 亿金融资产公允价值变动是一次性市场扰动），主业利润的环比降幅可控；赛轮的扣非环比 -47.7% 与表观同步，说明赛轮的利润下滑<b>全部是主业层面</b>（原材料 + 汇兑是持续经营性压力，除非成本回落否则不会自愈）。<b>性质差异：阳光的 Q3 利润里有一块非现金的公允价值损失（可能回转），赛轮的利润下滑是现金口径的真实挤压（更"实"）。</b></p>
+    <p style="font-size:13px;"><b>现金流与存货：赛轮全面占优。</b>Q3 单季现金流赛轮 +10.61 亿（环比改善）vs 阳光 -0.88 亿（转负）；存货赛轮 +20%（占成本 37%）vs 阳光 +50%（占成本 126%）。阳光把现金变成了库存和应收，赛轮的报表更"轻"。<b>若四季度行业价格战延续或海外需求走弱，阳光的存货减值弹性远大于赛轮。</b></p>
+    <p style="font-size:13px;"><b>共同点：</b>两家都被汇兑（美元/欧元贬值）伤了利润——阳光前三季财务费用 5.01 亿（同比多增 6.23 亿），赛轮 6.48 亿（同比 +172%）；两家的其他综合收益里外币折算差额都是大额负数（阳光 -9.22 亿、赛轮 -7.19 亿）——汇率是共同的、可逆的外生变量，若美元/欧元企稳回升，两家 Q4 利润都有修复弹性。</p>
+    <p class="src">来源：两公司 2026 年三季报公告（均于 2026-10-30 披露）；Q2 单季数据分别来自两家 2026 年半年报。单季值 = 累计 − 半年报。</p>
+  </div>
+
+  <!-- 后续跟踪 -->
+  <div class="card">
+    <h2>五、后续跟踪清单（阳光电源）</h2>
+    <table>
+      <thead><tr><th style="width:32%;">跟踪点</th><th>信号 / 阈值</th><th style="width:22%;">含义</th></tr></thead>
+      <tbody>
+        <tr><td>存货去化</td><td>Q4 存货能否从 409.7 亿开始回落；合同负债（146.66 亿）能否继续增长以印证订单备货逻辑</td><td>第一变量</td></tr>
+        <tr><td>毛利率</td><td>Q3 毛利率 29.45% 是否为周期底部——储能系统价格竞争与海外高毛利市场（欧美）占比变化</td><td>盈利核心</td></tr>
+        <tr><td>汇率</td><td>欧元/美元兑人民币走势——前三季财务费用 5.01 亿中汇兑损失占大头，汇率企稳则 Q4 修复</td><td>弹性来源</td></tr>
+        <tr><td>应收账款回款</td><td>应收 218.38 亿 + 坏账计提（信用减值 4.51 亿）同比仍在增加，关注国内电站业务回款</td><td>风险点</td></tr>
+        <tr><td>储能/逆变器出货</td><td>海外储能订单交付节奏（Q4 历来是确认高峰）——决定存货转化收入的速度</td><td>中期看点</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-top:12px;"><b>小结：</b>阳光电源 Q3 是"收入回升 + 表观利润腰斩 + 现金流转负 + 存货激增"的组合——比赛轮更复杂：赛轮的问题集中在成本传导时滞（等成本回落即可修复），阳光还要叠加行业竞争格局（毛利率）、金融资产波动（公允价值 -4.89 亿）和营运资金占用（存货 +88 亿/季）三重变量。<b>对比结论：单季度看阳光"改善"的证据在收入端（环比 +16.9%、合同负债高增）和扣非利润（环比仅 -24.5%），但恶化得更快的证据在现金流（转负）和存货（+27.4%/季）——收入在改善，报表质量在变重。赛轮收入平稳、利润受损更"实"，但现金流和存货的韧性明显更好。</b></p>
+    <div class="disclaimer">免责声明：以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。任何投资决策应结合个人风险承受能力、资金状况和投资目标独立判断，必要时咨询持牌专业机构。过往表现不预示未来收益。</div>
+  </div>
+
+</div>
+
+<script>
+function toggleChart(chartId, tableId) {
+  var c = document.getElementById(chartId);
+  var t = document.getElementById(tableId);
+  if (c.style.display === 'none') {
+    c.style.display = 'block';
+    t.style.display = 'none';
+    window[chartId + '_inst'] && window[chartId + '_inst'].resize();
+  } else {
+    c.style.display = 'none';
+    t.style.display = 'block';
+  }
+}
+
+var RED = '#d64040';
+var GREEN = '#1e9e5a';
+var ORANGE = '#c07f00';
+var GRAY = '#98a4b3';
+
+// Chart 1: 单季营收与利润（阳光电源）
+var c1 = echarts.init(document.getElementById('chart1'));
+window.chart1_inst = c1;
+c1.setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  legend: { data: ['营业收入', '归母净利润', '扣非归母净利润'] },
+  grid: { left: 60, right: 60, top: 50, bottom: 40 },
+  xAxis: { type: 'category', data: ['2025Q3', '2026Q1', '2026Q2', '2026Q3'] },
+  yAxis: [
+    { type: 'value', name: '营收(亿元)', max: 240 },
+    { type: 'value', name: '利润(亿元)', max: 45 }
+  ],
+  series: [
+    { name: '营业收入', type: 'bar', barWidth: 34, itemStyle: { color: ORANGE }, data: [228.69, 155.61, 153.52, 179.50] },
+    { name: '归母净利润', type: 'line', yAxisIndex: 1, itemStyle: { color: RED }, lineStyle: { width: 3 }, symbolSize: 8, data: [41.47, 22.91, 29.67, 13.41] },
+    { name: '扣非归母净利润', type: 'line', yAxisIndex: 1, itemStyle: { color: GREEN }, lineStyle: { width: 3 }, symbolSize: 8, data: [39.91, 20.32, 22.43, 16.93] }
+  ]
+});
+
+// Chart 2: 经营现金流（左：累计对比，右：单季轨迹）
+var c2 = echarts.init(document.getElementById('chart2'));
+window.chart2_inst = c2;
+c2.setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  legend: { data: ['前三季累计经营现金流', '单季经营现金流'] },
+  xAxis: [
+    { type: 'category', data: ['2025前三季', '2026前三季'] },
+    { type: 'category', gridIndex: 1, data: ['2026Q1', '2026Q2', '2026Q3'] }
+  ],
+  yAxis: [
+    { type: 'value', name: '累计(亿元)' },
+    { type: 'value', name: '单季(亿元)', gridIndex: 1 }
+  ],
+  grid: [
+    { left: 60, right: '55%', top: 50, bottom: 40 },
+    { left: '58%', right: 40, top: 50, bottom: 40 }
+  ],
+  series: [
+    { name: '前三季累计经营现金流', type: 'bar', barWidth: 40, itemStyle: { color: ORANGE }, data: [99.14, 36.48] },
+    { name: '单季经营现金流', type: 'bar', xAxisIndex: 1, yAxisIndex: 1, barWidth: 34, itemStyle: { color: GREEN }, data: [12.08, 25.27, -0.88] }
+  ]
+});
+
+// Chart 3: 存货
+var c3 = echarts.init(document.getElementById('chart3'));
+window.chart3_inst = c3;
+c3.setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  legend: { data: ['存货(亿元)'] },
+  grid: { left: 70, right: 60, top: 40, bottom: 40 },
+  xAxis: { type: 'category', data: ['2025年末', '2026Q1末', '2026Q2末', '2026Q3末'] },
+  yAxis: [
+    { type: 'value', name: '存货(亿元)', max: 450 },
+    { type: 'value', name: '较年初(%)', max: 60, axisLabel: { formatter: '{value}%' } }
+  ],
+  series: [
+    { name: '存货(亿元)', type: 'bar', barWidth: 44, itemStyle: { color: ORANGE }, label: { show: true, position: 'top', formatter: '{c}' }, data: [272.55, 277.58, 321.53, 409.72] },
+    { name: '较年初增幅', type: 'line', yAxisIndex: 1, itemStyle: { color: RED }, lineStyle: { width: 3, type: 'dashed' }, symbolSize: 9, data: [0, 1.8, 18.0, 50.3] }
+  ]
+});
+
+// Chart 4: 阳光 vs 赛轮 Q3 环比对比
+var c4 = echarts.init(document.getElementById('chart4'));
+window.chart4_inst = c4;
+c4.setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  legend: { data: ['阳光电源', '赛轮轮胎'] },
+  grid: { left: 70, right: 40, top: 50, bottom: 40 },
+  xAxis: { type: 'category', data: ['营收环比', '归母净利环比', '扣非净利环比'] },
+  yAxis: { type: 'value', name: '环比(%)', axisLabel: { formatter: '{value}%' } },
+  series: [
+    { name: '阳光电源', type: 'bar', barWidth: 30, itemStyle: { color: ORANGE }, label: { show: true, position: 'top', formatter: '{c}%' }, data: [16.9, -54.8, -24.5] },
+    { name: '赛轮轮胎', type: 'bar', barWidth: 30, itemStyle: { color: '#1667b8' }, label: { show: true, position: 'top', formatter: '{c}%' }, data: [2.8, -49.9, -47.7] }
+  ]
+});
+
+window.addEventListener('resize', function () {
+  c1.resize(); c2.resize(); c3.resize(); c4.resize();
+});
+</script>
+</body>
+</html>
