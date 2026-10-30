@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>赛轮轮胎（601058）2026年三季报分析</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f6f8; color: #1a2332; line-height: 1.65; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 24px 20px 60px; }
+  .header { background: linear-gradient(135deg, #0e4d8f 0%, #1667b8 100%); color: #fff; border-radius: 12px; padding: 32px 36px; margin-bottom: 20px; }
+  .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+  .header .sub { font-size: 13px; opacity: .85; }
+  .header .tag { display: inline-block; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); border-radius: 20px; padding: 2px 12px; font-size: 12px; margin-right: 8px; margin-top: 10px; }
+  .card { background: #fff; border-radius: 12px; padding: 26px 30px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(15,35,70,.06); }
+  .card h2 { font-size: 18px; color: #0e4d8f; margin-bottom: 14px; padding-left: 10px; border-left: 4px solid #1667b8; }
+  .card h3 { font-size: 15px; color: #333; margin: 18px 0 10px; }
+  .tldr { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+  .tldr .kpi { background: #f8fafd; border: 1px solid #e3eaf3; border-radius: 10px; padding: 14px 14px 10px; text-align: center; }
+  .tldr .kpi .label { font-size: 12px; color: #6b7a90; margin-bottom: 4px; }
+  .tldr .kpi .value { font-size: 22px; font-weight: 700; }
+  .tldr .kpi .delta { font-size: 12px; margin-top: 3px; }
+  .up { color: #d64040; }
+  .down { color: #1e9e5a; }
+  .conclusion { background: #f8fafd; border-left: 4px solid #1667b8; border-radius: 8px; padding: 16px 20px; font-size: 14px; }
+  .conclusion p { margin-bottom: 8px; }
+  .conclusion p:last-child { margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0; }
+  th { background: #eef3fa; color: #0e4d8f; font-weight: 600; padding: 9px 10px; text-align: right; white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  td { padding: 8px 10px; border-bottom: 1px solid #eef1f5; text-align: right; white-space: nowrap; }
+  tr:hover td { background: #f8fafd; }
+  .note { font-size: 12px; color: #8896a8; margin-top: 6px; }
+  .chart-box { width: 100%; height: 380px; margin: 12px 0 4px; }
+  .toggle-wrap { text-align: right; margin-bottom: 2px; }
+  .toggle-btn { display: inline-block; font-size: 12px; color: #1667b8; border: 1px solid #bcd3ea; background: #f4f8fd; border-radius: 6px; padding: 3px 12px; cursor: pointer; user-select: none; }
+  .toggle-btn:hover { background: #e7f0fa; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .flag { display: inline-block; border-radius: 5px; font-size: 11px; padding: 1px 8px; margin-left: 6px; vertical-align: middle; }
+  .flag-red { background: #fdeaea; color: #c03535; }
+  .flag-green { background: #e8f7ef; color: #1e9e5a; }
+  .flag-gray { background: #f0f2f5; color: #68788c; }
+  .disclaimer { font-size: 12px; color: #98a4b3; border-top: 1px dashed #d5dce5; padding-top: 14px; margin-top: 8px; line-height: 1.7; }
+  .src { font-size: 11px; color: #9aa7b5; margin-top: 4px; }
+  @media (max-width: 760px) { .tldr { grid-template-columns: repeat(2, 1fr); } .grid2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>赛轮轮胎（601058.SH）2026年三季报分析</h1>
+    <div class="sub">报告期：2026年第三季度（Q3 单季 + 前三季度累计）｜数据来源：公司三季报公告（2026-10-30 披露，未经审计）</div>
+    <span class="tag">同比 / 环比拆解</span><span class="tag">利润 · 现金流 · 扣非 · 存货</span><span class="tag">财报点评</span>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="card">
+    <h2>30 秒结论</h2>
+    <div class="tldr">
+      <div class="kpi">
+        <div class="label">Q3 归母净利润</div>
+        <div class="value">5.52<span style="font-size:13px;font-weight:400;"> 亿元</span></div>
+        <div class="delta down">同比 -46.9% ｜ 环比 -49.9%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Q3 营业收入</div>
+        <div class="value">108.6<span style="font-size:13px;font-weight:400;"> 亿元</span></div>
+        <div class="delta up">同比 +8.6% ｜ 环比 +2.8%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Q3 扣非净利润</div>
+        <div class="value">5.37<span style="font-size:13px;font-weight:400;"> 亿元</span></div>
+        <div class="delta down">同比 -46.1% ｜ 环比 -47.7%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">前三季经营现金流</div>
+        <div class="value">20.94<span style="font-size:13px;font-weight:400;"> 亿元</span></div>
+        <div class="delta down">同比 -16.5%（Q3 单季 10.61 亿，环比 +2.6%）</div>
+      </div>
+    </div>
+    <div class="conclusion">
+      <p><b>收入端稳、利润端塌。</b>Q3 营收 108.6 亿元创单季新高（同比 +8.6%、环比 +2.8%），但归母净利润 5.52 亿元同比接近腰斩、环比（对比 Q2 的 11.03 亿）也接近腰斩——<b>增长与利润严重背离</b>，是这份三季报的核心矛盾。</p>
+      <p><b>利润下滑主因（公司公告口径）</b>：① 原材料（天然橡胶等）价格上涨较快，产品提价传导相对滞后；② 美元等外币兑人民币贬值带来汇兑损失（前三季财务费用 6.48 亿元，同比 +172%；资产负债表外币折算差额 -7.19 亿元）。这与 Q2"提价对冲成本"的逻辑在 Q3 被冲破相印证——Q2 归母净利 11.03 亿（同比 +39.3%）时提价还在跑赢成本，Q3 成本涨幅重新跑到了提价前面。</p>
+      <p><b>现金流与存货质量尚稳。</b>前三季经营现金流净额 20.94 亿（同比 -16.5%），净现比 0.77 仍为正；Q3 单季经营现金流约 10.61 亿，环比 Q2（8.57 亿）还略有改善。存货 85.73 亿，较年初 +20.1%，同比 +30.3%，增速偏快——既有海外基地备货与产能扩张的经营性因素，也与 Q3 原材料成本上涨的存货重估一致，需跟踪 Q4 去化与减值风险（前三季资产减值损失 2.79 亿，同比 +99.2%）。</p>
+    </div>
+  </div>
+
+  <!-- 利润表现 -->
+  <div class="card">
+    <h2>一、利润：Q3 单季同比、环比双降近五成</h2>
+    <div class="toggle-wrap"><span class="toggle-btn" onclick="toggleChart('chart1','table1')">切换为表格</span></div>
+    <div id="chart1" class="chart-box"></div>
+    <div id="table1" style="display:none;">
+      <table>
+        <thead><tr><th>项目（单季，亿元）</th><th>2026Q3</th><th>2026Q2</th><th>环比</th><th>2025Q3</th><th>同比</th></tr></thead>
+        <tbody>
+          <tr><td>营业收入</td><td>108.58</td><td>105.66</td><td class="up">+2.8%</td><td>100.00</td><td class="up">+8.6%</td></tr>
+          <tr><td>归母净利润</td><td>5.52</td><td>11.03</td><td class="down">-49.9%</td><td>10.41</td><td class="down">-46.9%</td></tr>
+          <tr><td>扣非归母净利润</td><td>5.37</td><td>10.28</td><td class="down">-47.7%</td><td>9.97</td><td class="down">-46.1%</td></tr>
+          <tr><td>销售净利率（归母口径）</td><td>5.09%</td><td>10.44%</td><td>-5.35 pct</td><td>10.41%</td><td>-5.32 pct</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>前三季度累计口径</h3>
+    <table>
+      <thead><tr><th>项目（亿元）</th><th>2026 前三季</th><th>2025 前三季</th><th>同比</th></tr></thead>
+      <tbody>
+        <tr><td>营业收入</td><td>308.85</td><td>275.87</td><td class="up">+11.96%</td></tr>
+        <tr><td>利润总额</td><td>32.78</td><td>34.29</td><td class="down">-4.41%</td></tr>
+        <tr><td>归母净利润</td><td>27.12</td><td>28.72</td><td class="down">-5.56%</td></tr>
+        <tr><td>扣非归母净利润</td><td>25.95</td><td>28.22</td><td class="down">-8.06%</td></tr>
+        <tr><td>基本每股收益（元）</td><td>0.83</td><td>0.88</td><td class="down">-5.68%</td></tr>
+        <tr><td>加权平均 ROE</td><td>12.09%</td><td>13.93%</td><td>减少 1.84 pct</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-top:10px;"><b>解读：</b>上半年还是"量价齐升"（H1 归母净利 21.60 亿，同比 +17.97%），Q3 单季利润直接掉到 5.52 亿——单季利润贡献只占前三季累计的 20%。按"累计 − 中报"口径还原的 Q3 单季利润为 5.52 亿（27.12 − 21.60），环比 Q2 腰斩。<b>非经常性损益占比不大</b>（Q3 单季 0.15 亿，占归母净利 2.8%），利润下滑是主业层面的，不是一次性项目扰动。</p>
+    <p style="font-size:13px;"><b>利润率视角：</b>Q3 归母净利率 5.09%，环比下降 5.35 个百分点、同比下降 5.32 个百分点——回到 2024 年以来单季最低水平附近。而营收还在创新高，说明问题不在需求，在<b>成本与汇兑两头挤压毛利率</b>。</p>
+    <p class="src">来源：公司 2026 年三季报公告（2026-10-30）；Q2 单季数据来自 2026 年半年报（2026-08-31 披露）；2025Q3 数据来自 2025 年三季报（2025-10-29 披露）。</p>
+  </div>
+
+  <!-- 经营现金流 -->
+  <div class="card">
+    <h2>二、经营现金流：累计下滑，但 Q3 单季环比改善</h2>
+    <div class="toggle-wrap"><span class="toggle-btn" onclick="toggleChart('chart2','table2')">切换为表格</span></div>
+    <div id="chart2" class="chart-box"></div>
+    <div id="table2" style="display:none;">
+      <table>
+        <thead><tr><th>项目（亿元）</th><th>2026 前三季累计</th><th>2025 前三季累计</th><th>同比</th></tr></thead>
+        <tbody>
+          <tr><td>经营活动现金流净额</td><td>20.94</td><td>25.06</td><td class="down">-16.46%</td></tr>
+          <tr><td>销售商品收到现金 / 营业收入</td><td>89.5%</td><td>90.7%</td><td>-1.2 pct</td></tr>
+          <tr><td>净现比（经营现金流 / 归母净利）</td><td>0.77</td><td>0.87</td><td>-0.10</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>分季拆解（Q3 单季 = 累计 − 中报）</h3>
+    <table>
+      <thead><tr><th>单季（亿元）</th><th>2026Q3</th><th>2026Q2</th><th>2026Q1</th><th>环比</th></tr></thead>
+      <tbody>
+        <tr><td>经营活动现金流净额</td><td>10.61</td><td>8.57</td><td>1.76</td><td class="up">+23.8%</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-top:10px;"><b>解读：</b>经营现金流的前三季累计降幅（-16.5%）小于利润降幅（归母 -5.6%、但 Q3 单季 -46.9%），而且 <b>Q3 单季现金流 10.61 亿是全年最强的单季</b>——利润腰斩的季度现金流反而环比改善 24%，说明利润下滑里含相当比例的<b>非现金/计提因素</b>（资产减值损失前三季 2.79 亿，同比翻倍；Q3 存货重估不消耗现金），回款质量没有跟着利润一起塌。</p>
+    <p style="font-size:13px;">但拉长看要留意两点：① 净现比 0.77（去年前三季 0.87），利润的现金含量在下降；② 购买商品支付现金 223.3 亿（同比 +14.6%），快于收入增速，反映原材料涨价的现金压力已经传导到采购端，若 Q4 提价继续滞后，现金流会跟着利润承压。</p>
+    <p class="src">来源：公司 2026 年三季报合并现金流量表；2026 年半年报；同比基数为 2025 年三季报（Q3 单季现金流为"三季报累计 − 半年报累计"倒算）。</p>
+  </div>
+
+  <!-- 存货 -->
+  <div class="card">
+    <h2>三、存货：同比 +30%，增速跑赢收入</h2>
+    <div class="toggle-wrap"><span class="toggle-btn" onclick="toggleChart('chart3','table3')">切换为表格</span></div>
+    <div id="chart3" class="chart-box" style="height:360px;"></div>
+    <div id="table3" style="display:none;">
+      <table>
+        <thead><tr><th>时点</th><th>存货（亿元）</th><th>环比变动</th><th>同比变动</th></tr></thead>
+        <tbody>
+          <tr><td>2025-12-31</td><td>71.39</td><td>—</td><td>—</td></tr>
+          <tr><td>2026-06-30</td><td>81.85</td><td class="up">较年初 +14.7%</td><td class="up">+16.9%</td></tr>
+          <tr><td>2026-09-30</td><td>85.73</td><td class="up">较 H1 +4.7%</td><td class="up">+30.3%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;margin-top:10px;"><b>解读：</b>存货 85.73 亿，较年初增加 14.33 亿（+20.1%），同比增速 30.3%——<b>明显高于收入增速（前三季 +12.0%）</b>。拆开看有三层原因：① 毛利率更高的海外基地（越南、柬埔寨、印尼、墨西哥）产销规模扩大，相应的经营性备货基数在涨；② Q3 天然橡胶等原材料快速涨价，同样实物量的存货按新采购成本入账，账面价值被动抬升；③ 埃及、董家口等新基地投产前期的备料备货。</p>
+    <p style="font-size:13px;"><b>风险信号：</b>存货/前三季营业成本 = 37.0%，而 2025 年三季度末该比例为 31.7%——抬升 5.3 个百分点。若 Q4 原材料价格回落，涨价周期里囤的存货还好；若下游需求走弱，存货跌价准备就会成为利润的额外拖累（本报告期资产减值损失已同比翻倍）。<b>存货是这份报表里最值得跟踪的资产科目。</b></p>
+    <p class="src">来源：公司 2026 年三季报合并资产负债表（2026-09-30）；2026 年半年报；同比基数为 2025 年三季报（存货 65.78 亿）。</p>
+  </div>
+
+  <!-- 资产负债与减值 -->
+  <div class="card">
+    <h2>四、资产负债表与减值：扩张期的特征</h2>
+    <div class="grid2">
+      <div>
+        <h3 style="margin-top:0;">资产端（亿元）</h3>
+        <table>
+          <thead><tr><th>项目</th><th>26Q3 末</th><th>年初</th><th>变动</th></tr></thead>
+          <tbody>
+            <tr><td>总资产</td><td>533.07</td><td>467.70</td><td class="up">+14.0%</td></tr>
+            <tr><td>货币资金</td><td>54.93</td><td>45.79</td><td class="up">+20.0%</td></tr>
+            <tr><td>应收账款</td><td>80.83</td><td>61.47</td><td class="up">+31.5%</td></tr>
+            <tr><td>存货</td><td>85.73</td><td>71.39</td><td class="up">+20.1%</td></tr>
+            <tr><td>固定资产+在建</td><td>204.49</td><td>194.74</td><td class="up">+5.0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="margin-top:0;">负债与减值（亿元）</h3>
+        <table>
+          <thead><tr><th>项目</th><th>26 前三季</th><th>25 前三季</th><th>变动</th></tr></thead>
+          <tbody>
+            <tr><td>资产负债率（期末）</td><td>54.26%</td><td>49.66%</td><td>+4.6 pct</td></tr>
+            <tr><td>短期+长期借款</td><td>136.56</td><td>102.21*</td><td class="up">+33.6%</td></tr>
+            <tr><td>财务费用</td><td>6.48</td><td>2.38</td><td class="up">+172.4%</td></tr>
+            <tr><td>资产减值损失</td><td>2.79</td><td>1.40</td><td class="up">+99.2%</td></tr>
+            <tr><td>外币折算差额（其他综合收益）</td><td>-7.19</td><td>-2.26</td><td>恶化 4.93 亿</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p style="font-size:13px;margin-top:10px;"><b>解读：</b>资产端全面扩张——应收 +31.5%、存货 +20.1%、借款 +33.6%，是典型的<b>产能扩张 + 收入增长</b>期报表（印尼、墨西哥基地爬坡，埃及在建）。两点需要注意：① 应收账款增速（+31.5%）快于收入（+12.0%），回款条件在放宽；② 汇兑影响贯穿三张表——财务费用 +172% 里有汇兑损失，其他综合收益里 -7.19 亿的外币报表折算差额（美元贬值使海外子公司报表折成人民币缩水），这是非现金的账面影响，但直接压低净资产增速（归母净资产较年初仅 +4.7%）。</p>
+    <p class="note">*2025 年三季度末借款余额 102.21 亿 = 短期借款 53.80 + 长期借款 48.44（2025 年三季报资产负债表）。</p>
+    <p class="src">来源：公司 2026 年三季报合并资产负债表、合并利润表；同比数据引自 2025 年三季报。</p>
+  </div>
+
+  <!-- 后续跟踪 -->
+  <div class="card">
+    <h2>五、后续跟踪清单</h2>
+    <table>
+      <thead><tr><th style="width:32%;">跟踪点</th><th>信号 / 阈值</th><th style="width:22%;">含义</th></tr></thead>
+      <tbody>
+        <tr><td>天然橡胶价格走势</td><td>若原材料价格见顶回落，成本压力将自然缓解，Q4 毛利率有望环比修复</td><td>核心变量</td></tr>
+        <tr><td>产品提价传导进度</td><td>关注公司新一轮调价公告及执行情况——Q2 提价曾跑赢成本，Q3 被反超</td><td>弹性来源</td></tr>
+        <tr><td>美元兑人民币汇率</td><td>美元走强则汇兑损失收窄甚至转回；继续走弱则 Q4 利润继续承压</td><td>弹性来源</td></tr>
+        <tr><td>存货与减值</td><td>Q4 存货若未去化且橡胶价格回落，关注存货跌价准备计提</td><td>风险点</td></tr>
+        <tr><td>海外基地盈利</td><td>越南（H1 净利率 17.7%）、柬埔寨（21.6%）产能爬坡节奏，埃及基地投产进度</td><td>中期看点</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;margin-top:12px;"><b>小结：</b>这份三季报的关键词是<b>"增收不增利"</b>——收入创新高、利润腰斩，矛盾集中在成本传导时滞与汇兑损失。好的一面是：现金流质量依然为正且 Q3 环比改善、非经常性损益占比低（利润下滑是主业层面的真实反映，没有粉饰也没有一次性拖累）、全球化产能红利（海外基地净利率显著高于境内）的逻辑没有被破坏。需要验证的是：Q4 提价能否追上成本、橡胶价格与汇率的方向、以及存货在价格回落情形下的减值风险。</p>
+    <div class="disclaimer">免责声明：以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。任何投资决策应结合个人风险承受能力、资金状况和投资目标独立判断，必要时咨询持牌专业机构。过往表现不预示未来收益。</div>
+  </div>
+
+</div>
+
+<script>
+function toggleChart(chartId, tableId) {
+  var c = document.getElementById(chartId);
+  var t = document.getElementById(tableId);
+  if (c.style.display === 'none') {
+    c.style.display = 'block';
+    t.style.display = 'none';
+    window[chartId + '_inst'] && window[chartId + '_inst'].resize();
+  } else {
+    c.style.display = 'none';
+    t.style.display = 'block';
+  }
+}
+
+var RED = '#d64040';
+var GREEN = '#1e9e5a';
+var BLUE = '#1667b8';
+var GRAY = '#98a4b3';
+
+// Chart 1: 单季营收与利润
+var c1 = echarts.init(document.getElementById('chart1'));
+window.chart1_inst = c1;
+c1.setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  legend: { data: ['营业收入', '归母净利润', '扣非归母净利润'] },
+  grid: { left: 60, right: 60, top: 50, bottom: 40 },
+  xAxis: { type: 'category', data: ['2025Q3', '2026Q1', '2026Q2', '2026Q3'] },
+  yAxis: [
+    { type: 'value', name: '营收(亿元)', max: 120 },
+    { type: 'value', name: '利润(亿元)', max: 12 }
+  ],
+  series: [
+    { name: '营业收入', type: 'bar', barWidth: 34, itemStyle: { color: BLUE }, data: [100.00, 94.61, 105.66, 108.58] },
+    { name: '归母净利润', type: 'line', yAxisIndex: 1, itemStyle: { color: RED }, lineStyle: { width: 3 }, symbolSize: 8, data: [10.41, 10.56, 11.03, 5.52] },
+    { name: '扣非归母净利润', type: 'line', yAxisIndex: 1, itemStyle: { color: GREEN }, lineStyle: { width: 3 }, symbolSize: 8, data: [9.97, 10.30, 10.28, 5.37] }
+  ]
+});
+
+// Chart 2: 经营现金流
+var c2 = echarts.init(document.getElementById('chart2'));
+window.chart2_inst = c2;
+c2.setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  legend: { data: ['前三季累计经营现金流', '单季经营现金流'] },
+  grid: { left: 60, right: 40, top: 50, bottom: 40 },
+  xAxis: [
+    { type: 'category', data: ['2025前三季', '2026前三季'] },
+    { type: 'category', gridIndex: 1, data: ['2026Q1', '2026Q2', '2026Q3'] }
+  ],
+  yAxis: [
+    { type: 'value', name: '累计(亿元)' },
+    { type: 'value', name: '单季(亿元)', gridIndex: 1, max: 12 }
+  ],
+  grid: [
+    { left: 60, right: '55%', top: 50, bottom: 40 },
+    { left: '58%', right: 40, top: 50, bottom: 40 }
+  ],
+  series: [
+    { name: '前三季累计经营现金流', type: 'bar', barWidth: 40, itemStyle: { color: BLUE }, data: [25.06, 20.94] },
+    { name: '单季经营现金流', type: 'bar', xAxisIndex: 1, yAxisIndex: 1, barWidth: 34, itemStyle: { color: GREEN }, data: [1.76, 8.57, 10.61] }
+  ]
+});
+
+// Chart 3: 存货
+var c3 = echarts.init(document.getElementById('chart3'));
+window.chart3_inst = c3;
+c3.setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  legend: { data: ['存货(亿元)'] },
+  grid: { left: 60, right: 60, top: 40, bottom: 40 },
+  xAxis: { type: 'category', data: ['2025-12-31', '2026-06-30', '2026-09-30'] },
+  yAxis: [
+    { type: 'value', name: '存货(亿元)', max: 100 },
+    { type: 'value', name: '同比(%)', max: 40, axisLabel: { formatter: '{value}%' } }
+  ],
+  series: [
+    { name: '存货(亿元)', type: 'bar', barWidth: 50, itemStyle: { color: BLUE }, label: { show: true, position: 'top', formatter: '{c}' }, data: [71.39, 81.85, 85.73] },
+    { name: '同比增速', type: 'line', yAxisIndex: 1, itemStyle: { color: RED }, lineStyle: { width: 3, type: 'dashed' }, symbolSize: 9, data: [null, 16.9, 30.3] }
+  ]
+});
+
+window.addEventListener('resize', function () {
+  c1.resize(); c2.resize(); c3.resize();
+});
+</script>
+</body>
+</html>
